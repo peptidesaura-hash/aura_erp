@@ -485,7 +485,8 @@ async function handleFile(file){
   }catch(e){st.innerHTML=`<div class="imp-status bbad">Erro ao ler arquivo: ${e.message}</div>`;}
 }
 function parseCSV(text){
-  const lines=text.split(/?
+  const lines=text.split(/
+?
 /).filter(l=>l.trim());
   const delim=text.includes(';')?';':',';
   impHeaders=lines[0].split(delim).map(h=>h.trim().replace(/^"|"$/g,''));
